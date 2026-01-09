@@ -10,7 +10,7 @@ if "chat_history" not in st.session_state:
 # =====================================================
 # CONFIG
 # =====================================================
-API_URL = "https://ecom-olist-api.onrender.com"
+API_URL = "http://127.0.0.1:8000"
 
 st.set_page_config(
     page_title="E-Commerce Business Analytics",
