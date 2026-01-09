@@ -17,3 +17,4 @@ transformers
 torch
 httpx
 sqlalchemy
+streamlit
