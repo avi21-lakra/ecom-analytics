@@ -1,163 +1,164 @@
-E-Commerce Business Analytics & AI Insights Platform
+E-Commerce Business Analytics & AI Chatbot
 
-An end-to-end E-Commerce Analytics platform that transforms raw transactional data into actionable business insights using Data Analysis, Machine Learning, FastAPI, Streamlit, and AI-powered Chatbots.
+An end-to-end data analytics platform that combines
+Business Intelligence + Machine Learning + Generative AI
+to deliver real-time insights for an e-commerce business.
 
-This project is inspired by real-world e-commerce analytics use cases and demonstrates industry-grade data engineering, analytics, and AI integration.
+This project goes beyond dashboards by enabling a natural-language AI chatbot that can answer any business question using live SQL queries and explain results in plain business language.
 
 🚀 Key Features
-📈 Business Analytics
+📈 Business Analytics Dashboard
 
-Sales KPIs (Revenue, Orders, Customers, AOV)
+Total Revenue, Orders, Customers, AOV
 
-Daily revenue trends
+Daily Revenue Trend Visualization
 
-Revenue forecasting using time-series models
+Revenue Forecasting (Time-Series)
 
-Customer segmentation & churn analysis
+Customer Churn Analysis
 
-🤖 AI-Powered Insights
+Review Sentiment Analysis
 
-AI-generated insights for:
+🤖 AI Business Chatbot (Major Highlight)
 
-Sales performance
-
-Revenue forecasting
-
-Customer churn
-
-Review sentiment
-
-SQL-based AI Business Chatbot that can answer:
-
-Total revenue
-
-Highest / lowest selling products
-
-Monthly & daily sales
-
-Churn & sentiment related queries
-
-💬 AI Business Chatbot
-
-Natural language → SQL → Insight
-
-Auto-detects user intent
-
-Generates SQL queries dynamically
-
-Returns:
-
-Business explanation
-
-Insights & recommendations
-
-Auto-generated charts from query results
-
-🧠 Machine Learning Models
-
-Revenue forecasting (SARIMA)
-
-Customer churn prediction
-
-Review sentiment classification
-
-Product recommendation system
-
-🏗️ Tech Stack
-🔹 Backend
-
-FastAPI – Scalable REST API
-
-Pandas / NumPy – Data processing
-
-SQLite / SQL Engine – AI SQL queries
-
-DeepSeek / OpenRouter LLM – AI insights & chatbot
-
-Uvicorn – ASGI server
-
-🔹 Frontend
-
-Streamlit – Interactive dashboard
-
-Custom UI with KPI cards & charts
-
-AI chatbot interface
-
-🔹 Data Science & ML
-
-Pandas, Scikit-learn
-
-Time-series forecasting
-
-NLP sentiment analysis
-
-Recommendation systems
-
-📂 Project Structure
-ecom-olist-analytics/
-│
-├── src/
-│   ├── api_app.py          # FastAPI backend
-│   ├── ai/
-│   │   ├── llm.py          # LLM client (DeepSeek / OpenRouter)
-│   │   ├── sql_agent.py    # SQL-based AI agent
-│   │   ├── prompt_builder.py
-│   │   └── metrics.py      # Business metrics
-│
-├── frontend/
-│   └── app.py              # Streamlit dashboard
-│
-├── data/
-│   └── processed/          # Cleaned datasets
-│
-├── notebooks/              # EDA & ML notebooks
-├── requirements.txt
-└── README.md
-
-🧠 AI Business Chatbot – How It Works
-
-User asks a natural language question
-
-LLM converts the question into SQL
-
-SQL runs on business data
-
-Results are:
-
-Explained in business language
-
-Visualized automatically
-
-Enhanced with recommendations
-
-Example queries:
+Ask questions like:
 
 “What is our total revenue?”
 
 “Highest selling product category?”
 
-“Sales in June 2018”
+“Sales in March 2018”
 
-“Which category is underperforming?”
+“Lowest selling category by revenue”
 
-🖥️ How to Run Locally
+“Churn risk summary”
+
+➡️ AI converts your question into SQL, runs it on real data,
+then explains results with business insights & recommendations.
+
+📊 Auto-Generated Charts from AI
+
+AI responses automatically generate bar / line charts
+
+No manual coding needed
+
+Works for any SQL result
+
+🧠 AI Architecture (Industry-Grade)
+User Question
+      ↓
+LLM (DeepSeek via OpenRouter)
+      ↓
+SQL Query Generation
+      ↓
+Database Execution (SQLite)
+      ↓
+Result Explanation (LLM)
+      ↓
+Auto Visualization (Streamlit)
+
+🏗️ Tech Stack
+Frontend
+
+Streamlit
+
+Interactive dashboards
+
+AI Chat UI
+
+Auto charts
+
+Backend
+
+FastAPI
+
+REST APIs
+
+AI endpoints
+
+SQL execution engine
+
+Data & ML
+
+Pandas
+
+SQL (SQLite)
+
+Time-Series Forecasting
+
+Churn Prediction
+
+Sentiment Analysis
+
+AI / LLM
+
+DeepSeek (Free LLM)
+
+OpenRouter API
+
+Prompt Engineering
+
+SQL-based AI Agent
+
+Deployment
+
+Backend: Render
+
+Frontend: Streamlit Cloud
+
+Version Control: Git + GitHub
+
+📁 Project Structure
+ecom-olist-analytics/
+│
+├── data/
+│   └── processed/
+│
+├── src/
+│   ├── api_app.py          # FastAPI backend
+│   └── ai/
+│       ├── llm.py          # LLM calls
+│       ├── prompt_builder.py
+│       ├── sql_runner.py
+│
+├── frontend/
+│   └── app.py              # Streamlit UI
+│
+├── requirements.txt
+├── README.md
+
+⚙️ How to Run Locally
 1️⃣ Clone Repository
-git clone https://github.com/USERNAME/ecom-olist-analytics.git
+git clone https://github.com/your-username/ecom-olist-analytics.git
 cd ecom-olist-analytics
 
 2️⃣ Create Virtual Environment
 python -m venv .venv
-.venv\Scripts\activate
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
 
 3️⃣ Install Dependencies
 pip install -r requirements.txt
 
-4️⃣ Run Backend (FastAPI)
+4️⃣ Set Environment Variable
+OPENROUTER_API_KEY=your_api_key_here
+
+5️⃣ Run Backend
 uvicorn src.api_app:app --reload
 
-
-API Docs → http://127.0.0.1:8000/docs
-
-5️⃣ Run Frontend (Streamlit)
+6️⃣ Run Frontend
 streamlit run frontend/app.py
+
+🌐 Live Demo
+
+Backend API: https://your-render-url.onrender.com
+
+Dashboard: https://your-streamlit-app.streamlit.app
+
+(Free-tier deployments may take a few seconds to wake up)
+
+📌 Business Value
+
+✔ Converts raw data into decision-ready insights
+✔ Removes dependency on analysts for ad-hoc questions
+✔ Enables AI-driven decision making
+✔ Scalable & production-ready architecture
