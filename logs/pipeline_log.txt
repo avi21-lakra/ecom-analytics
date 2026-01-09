@@ -1,0 +1,141 @@
+[2025-11-14T08:15:24.571131] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\src\preprocess.py'
+[2025-11-14T08:15:28.705929] STEP preprocess finished with code 1
+[2025-11-14T08:15:28.707412] STEP preprocess STDERR (first 400 chars):
+E:\ecom-olist-analytics\src\preprocess.py:67: SyntaxWarning: "\p" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\p"? A raw string is also an option.
+  '@ | Out-File -Encoding utf8 src\preprocess.py'
+Traceback (most recent call last):
+  File "E:\ecom-olist-analytics\src\preprocess.py", line 66, in <module>
+    run_preprocess()
+    ~~~~~~~~~~~~~~^^
+  File 
+[2025-11-14T08:15:28.708818] Step 'preprocess' produced expected outputs.
+[2025-11-14T08:15:28.710045] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\forecasting_model.py'
+[2025-11-14T08:15:31.007231] STEP forecasting finished with code 1
+[2025-11-14T08:15:31.007852] STEP forecasting STDERR (first 400 chars):
+Traceback (most recent call last):
+  File "E:\ecom-olist-analytics\models\forecasting_model.py", line 33, in <module>
+    run_forecast()
+    ~~~~~~~~~~~~^^
+  File "E:\ecom-olist-analytics\models\forecasting_model.py", line 9, in run_forecast
+    print("\U0001f4cc Loading daily_revenue.csv...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python314\Lib\encodings\cp1252.py",
+[2025-11-14T08:15:31.008682] Step 'forecasting' produced expected outputs.
+[2025-11-14T08:15:31.008915] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\customer_segmentation.py'
+[2025-11-14T08:15:33.641052] STEP segmentation finished with code 1
+[2025-11-14T08:15:33.641654] STEP segmentation STDERR (first 400 chars):
+Traceback (most recent call last):
+  File "E:\ecom-olist-analytics\models\customer_segmentation.py", line 27, in <module>
+    run_segmentation()
+    ~~~~~~~~~~~~~~~~^^
+  File "E:\ecom-olist-analytics\models\customer_segmentation.py", line 9, in run_segmentation
+    print("\U0001f4cc Loading customer_metrics.csv...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python314
+[2025-11-14T08:15:33.642251] Step 'segmentation' produced expected outputs.
+[2025-11-14T08:15:33.642732] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\churn_model.py'
+[2025-11-14T08:15:35.741958] STEP churn finished with code 1
+[2025-11-14T08:15:35.742841] STEP churn STDERR (first 400 chars):
+Traceback (most recent call last):
+  File "E:\ecom-olist-analytics\models\churn_model.py", line 91, in <module>
+    run_churn()
+    ~~~~~~~~~^^
+  File "E:\ecom-olist-analytics\models\churn_model.py", line 25, in run_churn
+    print("\U0001f4cc Loading customer_metrics.csv...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python314\Lib\encodings\cp1252.py", line 19, in e
+[2025-11-14T08:15:35.743535] Step 'churn' produced expected outputs.
+[2025-11-14T08:15:35.743910] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\sentiment_model.py'
+[2025-11-14T08:15:37.688105] STEP sentiment finished with code 1
+[2025-11-14T08:15:37.688433] STEP sentiment STDERR (first 400 chars):
+Traceback (most recent call last):
+  File "E:\ecom-olist-analytics\models\sentiment_model.py", line 100, in <module>
+    run_sentiment()
+    ~~~~~~~~~~~~~^^
+  File "E:\ecom-olist-analytics\models\sentiment_model.py", line 40, in run_sentiment
+    print("\U0001f4cc Loading reviews...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python314\Lib\encodings\cp1252.py", line 19, in encode
+[2025-11-14T08:15:37.689026] Step 'sentiment' produced expected outputs.
+[2025-11-14T08:15:37.689339] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\recommender_model.py'
+[2025-11-14T08:15:38.316999] STEP recommender finished with code 1
+[2025-11-14T08:15:38.317416] STEP recommender STDERR (first 400 chars):
+Traceback (most recent call last):
+  File "E:\ecom-olist-analytics\models\recommender_model.py", line 96, in <module>
+    run_recommender(top_k=10)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "E:\ecom-olist-analytics\models\recommender_model.py", line 47, in run_recommender
+    print(f"\U0001f4cc Loading order items from {items_path}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Pro
+[2025-11-14T08:15:38.317921] Step 'recommender' produced expected outputs.
+[2025-11-14T08:15:38.327405] Saved pipeline summary to E:\ecom-olist-analytics\data\outputs\train_summary_20251114T081524Z.json
+[2025-12-12T18:12:18.006969] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\src\preprocess.py'
+[2025-12-12T18:12:24.705939] STEP preprocess finished with code 0
+[2025-12-12T18:12:24.706268] STEP preprocess STDOUT (first 400 chars):
+✅ Preprocessing finished. Files written to data/processed/
+
+[2025-12-12T18:12:24.706607] STEP preprocess STDERR (first 400 chars):
+E:\ecom-olist-analytics\src\preprocess.py:67: SyntaxWarning: "\p" is an invalid escape sequence. Such sequences will not work in the future. Did you mean "\\p"? A raw string is also an option.
+  '@ | Out-File -Encoding utf8 src\preprocess.py'
+
+[2025-12-12T18:12:24.707129] Step 'preprocess' produced expected outputs.
+[2025-12-12T18:12:24.707538] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\forecasting_model.py'
+[2025-12-12T18:13:24.952621] STEP forecasting finished with code 0
+[2025-12-12T18:13:24.953057] STEP forecasting STDOUT (first 400 chars):
+Loading daily_revenue.csv...
+Training SARIMA model...
+ Forecasting next 30 days...
+✅ Forecast saved!
+
+[2025-12-12T18:13:24.953644] Step 'forecasting' produced expected outputs.
+[2025-12-12T18:13:24.954057] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\customer_segmentation.py'
+[2025-12-12T18:13:33.518652] STEP segmentation finished with code 0
+[2025-12-12T18:13:33.519076] STEP segmentation STDOUT (first 400 chars):
+📌 Loading customer_metrics.csv...
+📌 Scaling features...
+📌 Running KMeans...
+✅ Customer segments saved!
+
+[2025-12-12T18:13:33.519657] Step 'segmentation' produced expected outputs.
+[2025-12-12T18:13:33.519933] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\churn_model.py'
+[2025-12-12T18:13:39.500152] STEP churn finished with code 0
+[2025-12-12T18:13:39.500583] STEP churn STDOUT (first 400 chars):
+📌 Loading customer_metrics.csv...
+Target distribution (before split): {np.int64(0): np.int64(28425), np.int64(1): np.int64(71016)}
+📌 Splitting data...
+Train distribution: {np.int64(0): np.int64(22740), np.int64(1): np.int64(56812)}
+Test distribution: {np.int64(0): np.int64(5685), np.int64(1): np.int64(14204)}
+📌 Training RandomForest...
+🔍 ROC AUC Score: 1.0000
+✅ Churn predictions saved to: E:\ecom-
+[2025-12-12T18:13:39.501107] Step 'churn' produced expected outputs.
+[2025-12-12T18:13:39.501435] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\sentiment_model.py'
+[2025-12-12T18:13:43.895680] STEP sentiment finished with code 0
+[2025-12-12T18:13:43.896258] STEP sentiment STDOUT (first 400 chars):
+📌 Loading reviews...
+📌 Building TF-IDF + Logistic Regression pipeline...
+📌 Training...
+📌 Evaluating on test set...
+              precision    recall  f1-score   support
+
+           0     0.7681    0.5924    0.6689      4551
+           1     0.8864    0.9468    0.9156     15294
+
+    accuracy                         0.8655     19845
+   macro avg     0.8273    0.7696    0.7923     19845
+weighted avg 
+[2025-12-12T18:13:43.897023] Step 'sentiment' produced expected outputs.
+[2025-12-12T18:13:43.897330] RUN: 'E:\ecom-olist-analytics\.venv\Scripts\python.exe' 'E:\ecom-olist-analytics\models\recommender_model.py'
+[2025-12-12T18:14:42.319302] STEP recommender finished with code 0
+[2025-12-12T18:14:42.319750] STEP recommender STDOUT (first 400 chars):
+📌 Loading order items from E:\ecom-olist-analytics\data\raw\olist_order_items_dataset.csv
+📌 Grouping products per order...
+📌 Computing co-occurrence counts (memory-efficient pair counting)...
+📌 Building top-k recommendations...
+📌 Computing product popularity fallback...
+📌 Saving recommendations to E:\ecom-olist-analytics\data\processed\product_recommendations.csv ...
+✅ Recommendations saved.
+
+[2025-12-12T18:14:42.320271] Step 'recommender' produced expected outputs.
+[2025-12-12T18:14:42.348912] Saved pipeline summary to E:\ecom-olist-analytics\data\outputs\train_summary_20251212T181218Z.json

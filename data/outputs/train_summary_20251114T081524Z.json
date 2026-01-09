@@ -1,0 +1,85 @@
+{
+  "run_id": "20251114T081524Z",
+  "started_at": "2025-11-14T08:15:24.568713",
+  "steps": [
+    {
+      "name": "preprocess",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\src\\preprocess.py"
+      ],
+      "started_at": "2025-11-14T08:15:24.570455",
+      "returncode": 1,
+      "stdout_snippet": "",
+      "stderr_snippet": "E:\\ecom-olist-analytics\\src\\preprocess.py:67: SyntaxWarning: \"\\p\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\p\"? A raw string is also an option.\n  '@ | Out-File -Encoding utf8 src\\preprocess.py'\nTraceback (most recent call last):\n  File \"E:\\ecom-olist-analytics\\src\\preprocess.py\", line 66, in <module>\n    run_preprocess()\n    ~~~~~~~~~~~~~~^^\n  File \"E:\\ecom-olist-analytics\\src\\preprocess.py\", line 63, in run_preprocess\n    print(\"\\u2705 Preprocessing finished. Files written to data/processed/\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python314\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\u2705' in position 0: character maps to <undefined>",
+      "missing_outputs": [],
+      "finished_at": "2025-11-14T08:15:28.658987"
+    },
+    {
+      "name": "forecasting",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\forecasting_model.py"
+      ],
+      "started_at": "2025-11-14T08:15:28.709887",
+      "returncode": 1,
+      "stdout_snippet": "",
+      "stderr_snippet": "Traceback (most recent call last):\n  File \"E:\\ecom-olist-analytics\\models\\forecasting_model.py\", line 33, in <module>\n    run_forecast()\n    ~~~~~~~~~~~~^^\n  File \"E:\\ecom-olist-analytics\\models\\forecasting_model.py\", line 9, in run_forecast\n    print(\"\\U0001f4cc Loading daily_revenue.csv...\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python314\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f4cc' in position 0: character maps to <undefined>",
+      "missing_outputs": [],
+      "finished_at": "2025-11-14T08:15:31.007222"
+    },
+    {
+      "name": "segmentation",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\customer_segmentation.py"
+      ],
+      "started_at": "2025-11-14T08:15:31.008861",
+      "returncode": 1,
+      "stdout_snippet": "",
+      "stderr_snippet": "Traceback (most recent call last):\n  File \"E:\\ecom-olist-analytics\\models\\customer_segmentation.py\", line 27, in <module>\n    run_segmentation()\n    ~~~~~~~~~~~~~~~~^^\n  File \"E:\\ecom-olist-analytics\\models\\customer_segmentation.py\", line 9, in run_segmentation\n    print(\"\\U0001f4cc Loading customer_metrics.csv...\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python314\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f4cc' in position 0: character maps to <undefined>",
+      "missing_outputs": [],
+      "finished_at": "2025-11-14T08:15:33.641043"
+    },
+    {
+      "name": "churn",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\churn_model.py"
+      ],
+      "started_at": "2025-11-14T08:15:33.642634",
+      "returncode": 1,
+      "stdout_snippet": "",
+      "stderr_snippet": "Traceback (most recent call last):\n  File \"E:\\ecom-olist-analytics\\models\\churn_model.py\", line 91, in <module>\n    run_churn()\n    ~~~~~~~~~^^\n  File \"E:\\ecom-olist-analytics\\models\\churn_model.py\", line 25, in run_churn\n    print(\"\\U0001f4cc Loading customer_metrics.csv...\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python314\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f4cc' in position 0: character maps to <undefined>",
+      "missing_outputs": [],
+      "finished_at": "2025-11-14T08:15:35.741950"
+    },
+    {
+      "name": "sentiment",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\sentiment_model.py"
+      ],
+      "started_at": "2025-11-14T08:15:35.743852",
+      "returncode": 1,
+      "stdout_snippet": "",
+      "stderr_snippet": "Traceback (most recent call last):\n  File \"E:\\ecom-olist-analytics\\models\\sentiment_model.py\", line 100, in <module>\n    run_sentiment()\n    ~~~~~~~~~~~~~^^\n  File \"E:\\ecom-olist-analytics\\models\\sentiment_model.py\", line 40, in run_sentiment\n    print(\"\\U0001f4cc Loading reviews...\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python314\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f4cc' in position 0: character maps to <undefined>",
+      "missing_outputs": [],
+      "finished_at": "2025-11-14T08:15:37.688096"
+    },
+    {
+      "name": "recommender",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\recommender_model.py"
+      ],
+      "started_at": "2025-11-14T08:15:37.689289",
+      "returncode": 1,
+      "stdout_snippet": "",
+      "stderr_snippet": "Traceback (most recent call last):\n  File \"E:\\ecom-olist-analytics\\models\\recommender_model.py\", line 96, in <module>\n    run_recommender(top_k=10)\n    ~~~~~~~~~~~~~~~^^^^^^^^^^\n  File \"E:\\ecom-olist-analytics\\models\\recommender_model.py\", line 47, in run_recommender\n    print(f\"\\U0001f4cc Loading order items from {items_path}\")\n    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Program Files\\Python314\\Lib\\encodings\\cp1252.py\", line 19, in encode\n    return codecs.charmap_encode(input,self.errors,encoding_table)[0]\n           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f4cc' in position 0: character maps to <undefined>",
+      "missing_outputs": [],
+      "finished_at": "2025-11-14T08:15:38.316990"
+    }
+  ],
+  "finished_at": "2025-11-14T08:15:38.318387"
+}

@@ -1,0 +1,85 @@
+{
+  "run_id": "20251212T181218Z",
+  "started_at": "2025-12-12T18:12:18.006241",
+  "steps": [
+    {
+      "name": "preprocess",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\src\\preprocess.py"
+      ],
+      "started_at": "2025-12-12T18:12:18.006389",
+      "returncode": 0,
+      "stdout_snippet": "\u2705 Preprocessing finished. Files written to data/processed/",
+      "stderr_snippet": "E:\\ecom-olist-analytics\\src\\preprocess.py:67: SyntaxWarning: \"\\p\" is an invalid escape sequence. Such sequences will not work in the future. Did you mean \"\\\\p\"? A raw string is also an option.\n  '@ | Out-File -Encoding utf8 src\\preprocess.py'",
+      "missing_outputs": [],
+      "finished_at": "2025-12-12T18:12:24.705921"
+    },
+    {
+      "name": "forecasting",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\forecasting_model.py"
+      ],
+      "started_at": "2025-12-12T18:12:24.707478",
+      "returncode": 0,
+      "stdout_snippet": "Loading daily_revenue.csv...\nTraining SARIMA model...\n Forecasting next 30 days...\n\u2705 Forecast saved!",
+      "stderr_snippet": "",
+      "missing_outputs": [],
+      "finished_at": "2025-12-12T18:13:24.952611"
+    },
+    {
+      "name": "segmentation",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\customer_segmentation.py"
+      ],
+      "started_at": "2025-12-12T18:13:24.953997",
+      "returncode": 0,
+      "stdout_snippet": "\ud83d\udccc Loading customer_metrics.csv...\n\ud83d\udccc Scaling features...\n\ud83d\udccc Running KMeans...\n\u2705 Customer segments saved!",
+      "stderr_snippet": "",
+      "missing_outputs": [],
+      "finished_at": "2025-12-12T18:13:33.518642"
+    },
+    {
+      "name": "churn",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\churn_model.py"
+      ],
+      "started_at": "2025-12-12T18:13:33.519873",
+      "returncode": 0,
+      "stdout_snippet": "\ud83d\udccc Loading customer_metrics.csv...\nTarget distribution (before split): {np.int64(0): np.int64(28425), np.int64(1): np.int64(71016)}\n\ud83d\udccc Splitting data...\nTrain distribution: {np.int64(0): np.int64(22740), np.int64(1): np.int64(56812)}\nTest distribution: {np.int64(0): np.int64(5685), np.int64(1): np.int64(14204)}\n\ud83d\udccc Training RandomForest...\n\ud83d\udd0d ROC AUC Score: 1.0000\n\u2705 Churn predictions saved to: E:\\ecom-olist-analytics\\data\\processed\\customer_churn_predictions.csv",
+      "stderr_snippet": "",
+      "missing_outputs": [],
+      "finished_at": "2025-12-12T18:13:39.500143"
+    },
+    {
+      "name": "sentiment",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\sentiment_model.py"
+      ],
+      "started_at": "2025-12-12T18:13:39.501371",
+      "returncode": 0,
+      "stdout_snippet": "\ud83d\udccc Loading reviews...\n\ud83d\udccc Building TF-IDF + Logistic Regression pipeline...\n\ud83d\udccc Training...\n\ud83d\udccc Evaluating on test set...\n              precision    recall  f1-score   support\n\n           0     0.7681    0.5924    0.6689      4551\n           1     0.8864    0.9468    0.9156     15294\n\n    accuracy                         0.8655     19845\n   macro avg     0.8273    0.7696    0.7923     19845\nweighted avg     0.8593    0.8655    0.8590     19845\n\nROC-AUC: 0.8223457312770194\n\ud83d\udccc Predicting sentiment probabilities for all reviews...\n\u2705 Saved review sentiments to E:\\ecom-olist-analytics\\data\\processed\\review_sentiments.csv\n\u2705 Sentiment model pipeline saved to E:\\ecom-olist-analytics\\data\\processed\\sentiment_model_pipeline.joblib",
+      "stderr_snippet": "",
+      "missing_outputs": [],
+      "finished_at": "2025-12-12T18:13:43.895668"
+    },
+    {
+      "name": "recommender",
+      "command": [
+        "E:\\ecom-olist-analytics\\.venv\\Scripts\\python.exe",
+        "E:\\ecom-olist-analytics\\models\\recommender_model.py"
+      ],
+      "started_at": "2025-12-12T18:13:43.897268",
+      "returncode": 0,
+      "stdout_snippet": "\ud83d\udccc Loading order items from E:\\ecom-olist-analytics\\data\\raw\\olist_order_items_dataset.csv\n\ud83d\udccc Grouping products per order...\n\ud83d\udccc Computing co-occurrence counts (memory-efficient pair counting)...\n\ud83d\udccc Building top-k recommendations...\n\ud83d\udccc Computing product popularity fallback...\n\ud83d\udccc Saving recommendations to E:\\ecom-olist-analytics\\data\\processed\\product_recommendations.csv ...\n\u2705 Recommendations saved.",
+      "stderr_snippet": "",
+      "missing_outputs": [],
+      "finished_at": "2025-12-12T18:14:42.319294"
+    }
+  ],
+  "finished_at": "2025-12-12T18:14:42.320680"
+}

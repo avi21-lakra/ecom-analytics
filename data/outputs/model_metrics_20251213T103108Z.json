@@ -1,0 +1,56 @@
+{
+  "forecast": {
+    "mae": 4637.632889627311,
+    "rmse": 6152.570828345758,
+    "n_days": 30,
+    "source": "E:\\ecom-olist-analytics\\data\\outputs\\forecast_backtest_comparison_20251114T093428Z.csv"
+  },
+  "churn": {
+    "roc_auc": 0.69607229156288,
+    "accuracy": 0.9269114349212095,
+    "precision": 0.9269298466180538,
+    "recall": 0.9999674489762703,
+    "n_customers": 99441
+  },
+  "sentiment": {
+    "roc_auc": 0.8297127601348686,
+    "report": {
+      "0": {
+        "precision": 0.7828581263266594,
+        "recall": 0.5997187307726114,
+        "f1-score": 0.6791588901331342,
+        "support": 22754.0
+      },
+      "1": {
+        "precision": 0.8886457276295038,
+        "recall": 0.9505034654112724,
+        "f1-score": 0.9185343384113785,
+        "support": 76470.0
+      },
+      "accuracy": 0.8700616786261388,
+      "macro avg": {
+        "precision": 0.8357519269780815,
+        "recall": 0.7751110980919419,
+        "f1-score": 0.7988466142722563,
+        "support": 99224.0
+      },
+      "weighted avg": {
+        "precision": 0.8643865657327356,
+        "recall": 0.8700616786261388,
+        "f1-score": 0.8636408756390334,
+        "support": 99224.0
+      }
+    },
+    "n_reviews": 99224
+  },
+  "segmentation": {
+    "silhouette": 0.3337955898692386,
+    "cluster_sizes": {
+      "1": 37087,
+      "0": 36855,
+      "2": 23468,
+      "3": 2031
+    },
+    "n_customers": 99441
+  }
+}

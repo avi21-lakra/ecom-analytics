@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+env/
+*.egg-info/
+
+
+# Data
+data/raw/
+data/interim/
+
+
+# IDEs
+.vscode/
+.ipynb_checkpoints/
+
+
+# OS
+.DS_Store
+
+
+# Secrets
+.kaggle/
+.env

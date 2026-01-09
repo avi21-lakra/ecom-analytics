@@ -1,0 +1,107 @@
+1. Revenue KPIs
+Total Revenue = SUM(daily_revenue[total_revenue])
+
+Total Orders = SUM(daily_revenue[orders_count])
+
+AOV = DIVIDE([Total Revenue], [Total Orders], 0)
+
+Unique Customers = DISTINCTCOUNT(olist_full_orders[customer_id])
+
+ 2. Time Intelligence
+Year-To-Date
+Revenue YTD = TOTALYTD([Total Revenue], DateTable[Date])
+
+Month-over-Month %
+Revenue MoM % =
+VAR ThisMonth = [Total Revenue]
+VAR PrevMonth =
+    CALCULATE(
+        [Total Revenue],
+        DATEADD(DateTable[Date], -1, MONTH)
+    )
+RETURN DIVIDE(ThisMonth - PrevMonth, PrevMonth)
+
+Rolling 30-Day Revenue
+Revenue Rolling 30 Days =
+CALCULATE(
+    [Total Revenue],
+    DATESINPERIOD(DateTable[Date], MAX(DateTable[Date]), -30, DAY)
+)
+
+ 3. Forecast Backtest KPIs (Using forecast_backtest table)
+Mean Absolute Error
+MAE Backtest =
+VAR T =
+    SUMMARIZE(
+        forecast_backtest,
+        forecast_backtest[date],
+        "abs_err",
+            ABS(
+                SUM(forecast_backtest[actual]) -
+                SUM(forecast_backtest[forecast])
+            )
+    )
+RETURN AVERAGEX(T, [abs_err])
+
+Root Mean Squared Error
+RMSE Backtest =
+VAR T =
+    SUMMARIZE(
+        forecast_backtest,
+        forecast_backtest[date],
+        "sq_err",
+            (SUM(forecast_backtest[actual]) -
+             SUM(forecast_backtest[forecast]))^2
+    )
+RETURN SQRT(AVERAGEX(T, [sq_err]))
+
+ 4. Customer Metrics
+Total Customers
+Total Customers = DISTINCTCOUNT(customer_metrics[customer_id])
+
+High Value Customers (Cluster 3)
+High Value Customers =
+COUNTROWS(FILTER(customer_segments, customer_segments[cluster] = 3))
+
+ 5. Churn Model Measures
+Average Churn Probability
+Avg Churn Probability = AVERAGE(customer_churn_predictions[churn_probability])
+
+High Risk Customers (Churn > 0.6)
+High Risk Customers =
+COUNTROWS(
+    FILTER(
+        customer_churn_predictions,
+        customer_churn_predictions[churn_probability] > 0.6
+    )
+)
+
+ 6. Sentiment Measures
+Positive Review %
+Positive Review % =
+DIVIDE(
+    CALCULATE(
+        COUNT(review_sentiments[review_id]),
+        review_sentiments[sentiment_pred] = 1
+    ),
+    COUNT(review_sentiments[review_id])
+)
+
+Negative Review Count
+Negative Reviews =
+COUNTROWS(FILTER(review_sentiments, review_sentiments[sentiment_pred] = 0))
+
+ 7. Segmentation KPIs
+Customers Per Segment
+Customers in Segment =
+COUNTROWS(customer_segments)
+
+Revenue by Cluster
+Revenue by Cluster =
+CALCULATE(
+    [Total Revenue],
+    TREATAS(
+        VALUES(customer_segments[cluster]),
+        customer_metrics[customer_id]
+    )
+)
