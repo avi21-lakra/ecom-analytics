@@ -16,5 +16,4 @@ xgboost
 transformers
 torch
 httpx
-streamlit
 sqlalchemy
