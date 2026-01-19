@@ -143,14 +143,14 @@ pip install -r requirements.txt
 OPENROUTER_API_KEY=your_api_key_here
 
 5️⃣ Run Backend
-uvicorn src.api_app:app --reload
+uvicorn src.api_app:app --reload  
 
 6️⃣ Run Frontend
 streamlit run frontend/app.py
 
 🌐 Live Demo
 
-Backend API: https://your-render-url.onrender.com
+Backend API:https://ecom-analytics-wak7.onrender.com
 
 Dashboard: https://your-streamlit-app.streamlit.app
 
