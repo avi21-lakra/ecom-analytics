@@ -152,7 +152,7 @@ streamlit run frontend/app.py
 
 Backend API:https://ecom-analytics-wak7.onrender.com
 
-Dashboard: https://your-streamlit-app.streamlit.app
+Dashboard: https://ecom-analytics-k8yhemwmu733fjk35fenk7.streamlit.app
 
 (Free-tier deployments may take a few seconds to wake up)
 
